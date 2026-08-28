@@ -2,17 +2,23 @@
 
 A community directory of extensions for [Omalaunch](https://github.com/DanielLemky/omalaunch), the extensible command launcher for Omarchy.
 
-This repository is a catalog. Every extension remains an independent, standard Omarchy plugin hosted in its own repository.
+This repository is only a catalog—it is not an Omarchy plugin and should not be installed. Every extension is an independent Omarchy plugin hosted in its own repository.
 
 ## Browse extensions
+
+- [Claude Code for Omalaunch](https://github.com/DanielLemky/omalaunch-claude)
+- [Codex for Omalaunch](https://github.com/DanielLemky/omalaunch-codex)
+- [Pi for Omalaunch](https://github.com/DanielLemky/omalaunch-pi)
 
 See [`extensions.json`](extensions.json) for the machine-readable directory.
 
 When an extension is listed on [omarchyplugins.com](https://omarchyplugins.com), its directory entry links to the marketplace page. The extension's GitHub repository remains the canonical source.
 
-## Installation
+## Installing an extension
 
-Prefer the linked omarchyplugins.com page when available. Otherwise install directly from the extension repository:
+Do not install this directory repository. Choose an extension above instead.
+
+Prefer its linked omarchyplugins.com page when available. Otherwise install directly from that extension's repository:
 
 ```bash
 omarchy plugin add https://github.com/example/omalaunch-example --enable
