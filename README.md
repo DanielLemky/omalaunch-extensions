@@ -14,25 +14,13 @@ See [`extensions.json`](extensions.json) for the machine-readable directory.
 
 When an extension is listed on [omarchyplugins.com](https://omarchyplugins.com), its directory entry links to the marketplace page. The extension's GitHub repository remains the canonical source.
 
-## Add an extension
+## Submit an extension
 
-Submit a pull request that adds one entry to `extensions.json`, sorted by `id`:
+[Open the extension submission form](https://github.com/DanielLemky/omalaunch-extensions/issues/new?template=submit-extension.yml) with the public GitHub repository and its prefixes. No pull request or catalog editing is required.
 
-```json
-{
-  "id": "example.omalaunch-agent",
-  "name": "Example Agent",
-  "description": "Launch Example Agent prompts from Omalaunch",
-  "author": "Example Author",
-  "repository": "https://github.com/example/omalaunch-agent",
-  "omarchyPluginsUrl": "https://omarchyplugins.com/plugins/example-agent",
-  "prefixes": ["example"]
-}
-```
+Submissions follow the same baseline rules as omarchyplugins.com: a public repository, valid namespaced Omarchy manifest, README, license, and documented safe installation and removal. An omarchyplugins.com listing is optional and can be linked when available.
 
-`omarchyPluginsUrl` is optional. It can be added later after the extension appears on omarchyplugins.com.
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for acceptance requirements.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the complete acceptance requirements.
 
 ## Related projects
 

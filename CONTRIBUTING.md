@@ -1,6 +1,6 @@
-# Contributing an extension
+# Submitting an extension
 
-Extensions are submitted by pull request to `extensions.json`.
+Extensions are submitted through the [GitHub Issue Form](https://github.com/DanielLemky/omalaunch-extensions/issues/new?template=submit-extension.yml). Contributors do not need to edit the catalog or open a pull request.
 
 ## Requirements
 
@@ -17,17 +17,12 @@ The extension must:
 
 An omarchyplugins.com listing is recommended but not required.
 
-## Directory entry
+## Submission
 
-Add one entry matching `schema.json`. Keep entries sorted lexicographically by `id`. The `omarchyPluginsUrl` field is optional and must point to the extension's page on omarchyplugins.com when present.
-
-Run validation locally:
-
-```bash
-npx --yes ajv-cli@5 validate --spec=draft2020 -s schema.json -d extensions.json
-node scripts/check-directory.js
-```
+Provide the public repository URL, launcher prefixes, and optional omarchyplugins.com listing in the issue form. Confirm each requirement in the submission checklist.
 
 ## Review
+
+Maintainers validate the repository's current default-branch commit before adding it to `extensions.json`. Accepted entries must match `schema.json` and remain sorted by plugin ID.
 
 Directory inclusion is a discovery aid, not a security endorsement. Maintainers may reject extensions that are misleading, unsafe, abandoned, duplicative, or unrelated to Omalaunch.

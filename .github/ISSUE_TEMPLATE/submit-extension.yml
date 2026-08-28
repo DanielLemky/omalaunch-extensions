@@ -1,0 +1,62 @@
+name: Submit an extension
+description: Submit a public Omalaunch extension for inclusion in the directory
+title: "[Extension]: "
+labels:
+  - submission
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Submit the GitHub repository for your Omalaunch extension. The directory validates listings, not extension security. Extensions run unsandboxed with the user's permissions.
+
+  - type: input
+    id: repository
+    attributes:
+      label: Repository URL
+      description: Public GitHub repository containing the extension.
+      placeholder: https://github.com/yourname/omalaunch-extension
+    validations:
+      required: true
+
+  - type: input
+    id: marketplace
+    attributes:
+      label: omarchyplugins.com URL
+      description: Optional link if the extension is already listed on omarchyplugins.com.
+      placeholder: https://omarchyplugins.com/plugins/your-extension
+
+  - type: input
+    id: prefixes
+    attributes:
+      label: Prefixes
+      description: Comma-separated launcher prefixes exposed by the extension, if any.
+      placeholder: example, ex
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: requirements
+    attributes:
+      label: Submission requirements
+      description: Confirm that the repository follows the same baseline rules used by omarchyplugins.com.
+      options:
+        - label: The repository is public on GitHub.
+          required: true
+        - label: A valid `manifest.json` exists in the repository root and uses a unique namespaced plugin ID.
+          required: true
+        - label: The manifest declares one or more files through `omalaunch.extensions`.
+          required: true
+        - label: The repository includes a README and license.
+          required: true
+        - label: Installation and removal instructions are documented and safe.
+          required: true
+        - label: Dependencies and privilege boundaries are documented, and no dependencies are installed silently.
+          required: true
+        - label: I tested the extension on a current Omarchy installation.
+          required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional notes
+      description: Optional context for reviewers.

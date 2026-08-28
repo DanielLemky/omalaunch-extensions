@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Omalaunch documentation
+    url: https://github.com/DanielLemky/omalaunch
+    about: Read the launcher and extension documentation.
+  - name: Publish on omarchyplugins.com
+    url: https://omarchyplugins.com/publish.html
+    about: Submit a standard Omarchy plugin to the community marketplace.
