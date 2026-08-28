@@ -14,26 +14,6 @@ See [`extensions.json`](extensions.json) for the machine-readable directory.
 
 When an extension is listed on [omarchyplugins.com](https://omarchyplugins.com), its directory entry links to the marketplace page. The extension's GitHub repository remains the canonical source.
 
-## Installing an extension
-
-Do not install this directory repository. Choose an extension above instead.
-
-Prefer its linked omarchyplugins.com page when available. Otherwise install directly from that extension's repository:
-
-```bash
-omarchy plugin add https://github.com/example/omalaunch-example --enable
-```
-
-Omalaunch discovers the extension automatically when the enabled plugin declares extension files in its manifest:
-
-```json
-"omalaunch": {
-  "extensions": ["omalaunch.json"]
-}
-```
-
-No separate registration inside Omalaunch is required.
-
 ## Add an extension
 
 Submit a pull request that adds one entry to `extensions.json`, sorted by `id`:
