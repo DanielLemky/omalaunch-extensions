@@ -8,7 +8,7 @@ The extension must:
 
 1. Be a public GitHub repository.
 2. Be a valid Omarchy plugin with a unique, non-`omarchy.*` plugin ID.
-3. Declare at least one provider through `omalaunch.queryProviders` in `manifest.json`.
+3. Declare at least one extension through `omalaunch.extensions` in `manifest.json`.
 4. Include a README with installation, usage, dependencies, and removal instructions.
 5. Include a license.
 6. Avoid silent package installation or hidden privilege escalation.

@@ -1,6 +1,6 @@
 # Omalaunch Extension Directory
 
-A community directory of query-provider extensions for [Omalaunch](https://github.com/DanielLemky/omalaunch), the extensible command launcher for Omarchy.
+A community directory of extensions for [Omalaunch](https://github.com/DanielLemky/omalaunch), the extensible command launcher for Omarchy.
 
 This repository is a catalog. Every extension remains an independent, standard Omarchy plugin hosted in its own repository.
 
@@ -18,11 +18,11 @@ Prefer the linked omarchyplugins.com page when available. Otherwise install dire
 omarchy plugin add https://github.com/example/omalaunch-example --enable
 ```
 
-Omalaunch discovers the extension automatically when the enabled plugin declares query providers in its manifest:
+Omalaunch discovers the extension automatically when the enabled plugin declares extension files in its manifest:
 
 ```json
 "omalaunch": {
-  "queryProviders": ["omalaunch.json"]
+  "extensions": ["omalaunch.json"]
 }
 ```
 
