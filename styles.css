@@ -30,23 +30,9 @@ body {
 
 a { color: inherit; }
 a:focus-visible { outline: 2px solid var(--pink); outline-offset: 4px; border-radius: 2px; }
-.site-header, main, footer { width: min(calc(100% - 40px), var(--max-width)); margin-inline: auto; }
+main, footer { width: min(calc(100% - 40px), var(--max-width)); margin-inline: auto; }
 
-.site-header {
-  min-height: 76px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid var(--line);
-}
-
-.brand { display: flex; gap: 11px; align-items: center; color: var(--muted); font-size: 13px; font-weight: 600; text-decoration: none; }
-.brand img { width: 34px; height: 34px; border-radius: 50%; object-fit: cover; }
-nav { display: flex; gap: 28px; }
-nav a, footer a { color: var(--muted); font-size: 12px; text-decoration: none; }
-nav a:hover, footer a:hover { color: var(--pink); }
-
-.hero { padding: 40px 0 42px; }
+.hero { padding: 58px 0 42px; }
 .hero-logo { display: block; width: min(100%, 920px); height: auto; margin: 0 auto; }
 .hero-details { display: flex; align-items: center; justify-content: space-between; gap: 30px; width: min(100%, 920px); margin: 4px auto 0; padding-top: 24px; border-top: 1px solid var(--line); }
 .hero-details p { margin: 0; color: var(--muted); font-size: 15px; }
@@ -76,11 +62,13 @@ h2 { margin: 0; font-size: clamp(34px, 5vw, 48px); letter-spacing: -.05em; }
 .loading, .notice { color: var(--muted); }
 
 footer { display: flex; justify-content: space-between; gap: 24px; padding: 27px 0 40px; border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; }
+footer nav { display: flex; flex-wrap: wrap; gap: 22px; }
+footer a { color: var(--muted); font-size: 11px; text-decoration: none; }
+footer a:hover { color: var(--pink); }
 footer p { margin: 0; }
 
 @media (max-width: 760px) {
-  nav a:first-child { display: none; }
-  .hero { padding-top: 24px; }
+  .hero { padding-top: 32px; }
   .hero-details { align-items: start; flex-direction: column; gap: 20px; }
   .extension-grid { grid-template-columns: 1fr; }
   .extension-card { min-height: 250px; }
@@ -88,7 +76,6 @@ footer p { margin: 0; }
 }
 
 @media (max-width: 480px) {
-  .brand span { display: none; }
   .section-heading { align-items: start; flex-direction: column; gap: 10px; }
 }
 
