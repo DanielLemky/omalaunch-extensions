@@ -23,6 +23,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v5
+      - name: Generate extension pages
+        run: node scripts/generate-pages.js
       - uses: actions/upload-pages-artifact@v3
         with:
           path: .

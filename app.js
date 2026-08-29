@@ -31,8 +31,8 @@ function createCard(extension, index) {
 
   const link = document.createElement('a');
   link.className = 'card-link';
-  link.href = extension.marketplace || extension.repository;
-  link.textContent = extension.marketplace ? 'View extension' : 'View on GitHub';
+  link.href = `extensions/${encodeURIComponent(extension.id)}/`;
+  link.textContent = 'View extension';
   link.append(Object.assign(document.createElement('span'), {
     textContent: '↗',
     ariaHidden: 'true'
