@@ -47,7 +47,7 @@ nav a, footer a { color: var(--muted); font-size: 12px; text-decoration: none; }
 nav a:hover, footer a:hover { color: var(--pink); }
 
 .hero { padding: 40px 0 42px; }
-.hero-logo { display: block; width: min(100%, 920px); height: auto; margin: 0 auto; mix-blend-mode: screen; }
+.hero-logo { display: block; width: min(100%, 920px); height: auto; margin: 0 auto; }
 .hero-details { display: flex; align-items: center; justify-content: space-between; gap: 30px; width: min(100%, 920px); margin: 4px auto 0; padding-top: 24px; border-top: 1px solid var(--line); }
 .hero-details p { margin: 0; color: var(--muted); font-size: 15px; }
 
