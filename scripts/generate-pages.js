@@ -2,6 +2,8 @@
 
 const fs = require('node:fs');
 const path = require('node:path');
+const { marked } = require('marked');
+const sanitizeHtml = require('sanitize-html');
 
 const root = path.resolve(__dirname, '..');
 const catalog = JSON.parse(fs.readFileSync(path.join(root, 'extensions.json'), 'utf8'));
@@ -16,23 +18,68 @@ function escapeHtml(value) {
     .replaceAll("'", '&#039;');
 }
 
-fs.rmSync(outputRoot, { recursive: true, force: true });
+function repositoryPath(repository) {
+  return new URL(repository).pathname.replace(/^\//, '').replace(/\/$/, '');
+}
 
-for (const extension of catalog.extensions) {
-  const directory = path.join(outputRoot, extension.id);
-  const name = escapeHtml(extension.name);
-  const description = escapeHtml(extension.description);
-  const author = escapeHtml(extension.author);
-  const repository = escapeHtml(extension.repository);
-  const installCommand = `omarchy plugin add ${extension.repository} --enable`;
-  const marketplaceLink = extension.omarchyPluginsUrl
-    ? `<a class="detail-link" href="${escapeHtml(extension.omarchyPluginsUrl)}">View on Omarchy Plugins <span aria-hidden="true">↗</span></a>`
-    : '';
-  const prefixes = extension.prefixes
-    .map((prefix) => `<code class="prefix">${escapeHtml(prefix)}</code>`)
-    .join('');
+function resolveReadmeUrl(value, repository, type) {
+  if (!value || /^(?:[a-z]+:|#)/i.test(value)) return value;
+  const base = type === 'image' ? `${repository}/raw/HEAD/` : `${repository}/blob/HEAD/`;
+  return new URL(value, base).href;
+}
 
-  const html = `<!doctype html>
+async function renderReadme(extension) {
+  const rawUrl = `https://raw.githubusercontent.com/${repositoryPath(extension.repository)}/HEAD/README.md`;
+  const response = await fetch(rawUrl);
+  if (!response.ok) throw new Error(`README request failed (${response.status}) for ${extension.id}`);
+
+  const markdown = await response.text();
+  const renderer = new marked.Renderer();
+  renderer.link = ({ href, title, tokens }) => {
+    const resolved = resolveReadmeUrl(href, extension.repository, 'link');
+    const titleAttribute = title ? ` title="${escapeHtml(title)}"` : '';
+    return `<a href="${escapeHtml(resolved)}"${titleAttribute}>${renderer.parser.parseInline(tokens)}</a>`;
+  };
+  renderer.image = ({ href, title, text }) => {
+    const resolved = resolveReadmeUrl(href, extension.repository, 'image');
+    const titleAttribute = title ? ` title="${escapeHtml(title)}"` : '';
+    return `<img src="${escapeHtml(resolved)}" alt="${escapeHtml(text)}"${titleAttribute}>`;
+  };
+
+  const rendered = marked.parse(markdown, { renderer });
+  return sanitizeHtml(rendered, {
+    allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img']),
+    allowedAttributes: {
+      ...sanitizeHtml.defaults.allowedAttributes,
+      a: ['href', 'name', 'target', 'rel', 'title'],
+      img: ['src', 'alt', 'title', 'width', 'height'],
+      code: ['class']
+    },
+    allowedSchemes: ['http', 'https', 'mailto'],
+    transformTags: {
+      a: sanitizeHtml.simpleTransform('a', { rel: 'nofollow noopener' }, true)
+    }
+  });
+}
+
+async function main() {
+  fs.rmSync(outputRoot, { recursive: true, force: true });
+
+  for (const extension of catalog.extensions) {
+    const directory = path.join(outputRoot, extension.id);
+    const name = escapeHtml(extension.name);
+    const description = escapeHtml(extension.description);
+    const author = escapeHtml(extension.author);
+    const repository = escapeHtml(extension.repository);
+    const marketplaceLink = extension.omarchyPluginsUrl
+      ? `<a class="detail-link" href="${escapeHtml(extension.omarchyPluginsUrl)}">View on Omarchy Plugins <span aria-hidden="true">↗</span></a>`
+      : '';
+    const prefixes = extension.prefixes
+      .map((prefix) => `<code class="prefix">${escapeHtml(prefix)}</code>`)
+      .join('');
+    const readme = await renderReadme(extension);
+
+    const html = `<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -59,16 +106,16 @@ for (const extension of catalog.extensions) {
         <div><dt>Prefix${extension.prefixes.length === 1 ? '' : 'es'}</dt><dd class="prefixes">${prefixes}</dd></div>
       </dl>
 
-      <section class="install" aria-labelledby="install-title">
-        <p class="detail-kicker">Installation</p>
-        <h2 id="install-title">Install from GitHub</h2>
-        <pre><code>${escapeHtml(installCommand)}</code></pre>
-      </section>
-
       <div class="detail-actions">
         <a class="button" href="${repository}">View source <span aria-hidden="true">↗</span></a>
         ${marketplaceLink}
       </div>
+
+      <section class="readme" aria-labelledby="documentation-title">
+        <p class="detail-kicker">From the repository</p>
+        <h2 id="documentation-title">Documentation</h2>
+        <div class="readme-content">${readme}</div>
+      </section>
     </article>
   </main>
 
@@ -84,8 +131,14 @@ for (const extension of catalog.extensions) {
 </html>
 `;
 
-  fs.mkdirSync(directory, { recursive: true });
-  fs.writeFileSync(path.join(directory, 'index.html'), html);
+    fs.mkdirSync(directory, { recursive: true });
+    fs.writeFileSync(path.join(directory, 'index.html'), html);
+  }
+
+  console.log(`Generated ${catalog.extensions.length} extension page(s) with repository documentation.`);
 }
 
-console.log(`Generated ${catalog.extensions.length} extension page(s).`);
+main().catch((error) => {
+  console.error(error.message);
+  process.exitCode = 1;
+});

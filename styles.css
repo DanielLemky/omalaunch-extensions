@@ -85,10 +85,21 @@ footer p { margin: 0; }
 .detail-meta dt { margin-bottom: 9px; color: var(--muted); font-size: 10px; text-transform: uppercase; }
 .detail-meta dd { margin: 0; font-size: 13px; }
 .detail-meta .prefixes { margin-bottom: 0; }
-.install { margin-top: 52px; }
-.install h2 { font-size: 30px; }
-.install pre { overflow-x: auto; margin: 19px 0 0; padding: 17px 20px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: #e492ff; font-family: "DM Mono", monospace; font-size: 12px; line-height: 1.6; }
 .detail-actions { display: flex; align-items: center; gap: 24px; margin-top: 26px; }
+.readme { margin-top: 68px; padding-top: 48px; border-top: 1px solid var(--line); }
+.readme > h2 { margin-bottom: 32px; font-size: 30px; }
+.readme-content { color: var(--muted); font-size: 14px; line-height: 1.75; }
+.readme-content h1 { margin: 0 0 22px; color: var(--text); font-size: 34px; letter-spacing: -.04em; }
+.readme-content h2 { margin: 42px 0 14px; color: var(--text); font-size: 24px; letter-spacing: -.03em; }
+.readme-content h3 { margin: 30px 0 12px; color: var(--text); font-size: 18px; }
+.readme-content p, .readme-content ul, .readme-content ol { margin: 0 0 18px; }
+.readme-content a { color: #e492ff; }
+.readme-content a:hover { color: var(--pink); }
+.readme-content pre { overflow-x: auto; margin: 18px 0 24px; padding: 17px 20px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: #e492ff; font-family: "DM Mono", monospace; font-size: 12px; line-height: 1.6; }
+.readme-content :not(pre) > code { padding: 3px 6px; border: 1px solid var(--line); border-radius: 4px; color: #e492ff; background: var(--surface); font-family: "DM Mono", monospace; font-size: .85em; }
+.readme-content img { max-width: 100%; height: auto; border-radius: 6px; }
+.readme-content hr { margin: 36px 0; border: 0; border-top: 1px solid var(--line); }
+.readme-content blockquote { margin: 22px 0; padding-left: 18px; border-left: 2px solid var(--pink); }
 
 @media (max-width: 760px) {
   .hero { padding-top: 32px; }
