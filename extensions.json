@@ -2,7 +2,7 @@
   "$schema": "./schema.json",
   "extensions": [
     {
-      "id": "daniellemky.omalaunch-claude",
+      "id": "omalaunch.claude",
       "name": "Claude Code for Omalaunch",
       "description": "Launch Claude Code prompts from Omalaunch",
       "author": "Daniel Lemky",
@@ -10,7 +10,7 @@
       "prefixes": ["claude"]
     },
     {
-      "id": "daniellemky.omalaunch-codex",
+      "id": "omalaunch.codex",
       "name": "Codex for Omalaunch",
       "description": "Launch Codex prompts from Omalaunch",
       "author": "Daniel Lemky",
@@ -18,7 +18,7 @@
       "prefixes": ["codex"]
     },
     {
-      "id": "daniellemky.omalaunch-pi",
+      "id": "omalaunch.pi",
       "name": "Pi for Omalaunch",
       "description": "Launch Pi prompts from Omalaunch",
       "author": "Daniel Lemky",
