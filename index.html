@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Browse community extensions for Omalaunch, the extensible command launcher for Omarchy.">
+  <meta name="theme-color" content="#11100e">
+  <title>Omalaunch Extensions</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="Omalaunch Extensions home">
+      <span class="brand-mark" aria-hidden="true">O</span>
+      <span>Omalaunch <strong>Extensions</strong></span>
+    </a>
+    <nav aria-label="Primary navigation">
+      <a href="https://github.com/DanielLemky/omalaunch">Omalaunch</a>
+      <a href="https://github.com/DanielLemky/omalaunch-extensions">GitHub</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Community directory</p>
+        <h1>Extensions for <em>Omalaunch.</em></h1>
+        <p class="intro">Connect your favorite tools to the launcher.</p>
+      </div>
+      <a class="button" href="https://github.com/DanielLemky/omalaunch-extensions/issues/new?template=submit-extension.yml">Submit an extension <span aria-hidden="true">↗</span></a>
+    </section>
+
+    <section class="directory" aria-labelledby="directory-title">
+      <div class="section-heading">
+        <div>
+          <h2 id="directory-title">Available extensions</h2>
+        </div>
+        <p id="extension-count" class="count" aria-live="polite"></p>
+      </div>
+
+      <div id="extension-grid" class="extension-grid" aria-live="polite">
+        <p class="loading">Loading extensions…</p>
+      </div>
+      <noscript><p class="notice">JavaScript is required to load the extension directory. You can also browse <a href="extensions.json">extensions.json</a>.</p></noscript>
+    </section>
+  </main>
+
+  <footer>
+    <p>Built for <a href="https://omarchy.org">Omarchy</a>.</p>
+    <p>Extensions are community software. Review the source before installing.</p>
+  </footer>
+</body>
+</html>

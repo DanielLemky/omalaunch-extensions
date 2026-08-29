@@ -6,6 +6,8 @@ This repository is only a catalog—it is not an Omarchy plugin and should not b
 
 ## Browse extensions
 
+Visit the [Omalaunch Extension Directory](https://daniellemky.github.io/omalaunch-extensions/) or browse the catalog below.
+
 - [Claude Code for Omalaunch](https://github.com/DanielLemky/omalaunch-claude)
 - [Codex for Omalaunch](https://github.com/DanielLemky/omalaunch-codex)
 - [Pi for Omalaunch](https://github.com/DanielLemky/omalaunch-pi)
