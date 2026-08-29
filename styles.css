@@ -36,6 +36,9 @@ main, footer { width: min(calc(100% - 40px), var(--max-width)); margin-inline: a
 .hero-logo { display: block; width: min(100%, 920px); height: auto; margin: 0 auto; }
 .hero-details { display: flex; align-items: center; justify-content: space-between; gap: 30px; width: min(100%, 920px); margin: 4px auto 0; padding-top: 24px; border-top: 1px solid var(--line); }
 .hero-details p { margin: 0; color: var(--muted); font-size: 15px; }
+.hero-details p a { color: var(--text); font-weight: 600; text-decoration: none; }
+.hero-details p a span { color: var(--orange); font-size: 12px; }
+.hero-details p a:hover { color: var(--pink); }
 
 .button { display: inline-flex; align-items: center; gap: 16px; padding: 12px 16px; border: 1px solid rgba(246, 44, 131, .5); border-radius: 5px; background: rgba(246, 44, 131, .08); color: #fff; font-size: 12px; font-weight: 700; text-decoration: none; }
 .button span { color: var(--orange); }
