@@ -2,7 +2,7 @@ name: Deploy directory website
 
 on:
   push:
-    branches: [main]
+    branches: [master]
   workflow_dispatch:
 
 permissions:
@@ -27,9 +27,14 @@ jobs:
         run: npm ci
       - name: Generate extension pages
         run: npm run build
+      - name: Prepare website artifact
+        run: |
+          mkdir _site
+          cp index.html app.js styles.css extensions.json _site/
+          cp -R assets extensions _site/
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: _site
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

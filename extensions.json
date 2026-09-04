@@ -1,29 +1,5 @@
 {
   "$schema": "./schema.json",
-  "extensions": [
-    {
-      "id": "omalaunch.claude",
-      "name": "Claude Code for Omalaunch",
-      "description": "Launch Claude Code prompts from Omalaunch",
-      "author": "Daniel Lemky",
-      "repository": "https://github.com/DanielLemky/omalaunch-claude",
-      "prefixes": ["claude"]
-    },
-    {
-      "id": "omalaunch.codex",
-      "name": "Codex for Omalaunch",
-      "description": "Launch Codex prompts from Omalaunch",
-      "author": "Daniel Lemky",
-      "repository": "https://github.com/DanielLemky/omalaunch-codex",
-      "prefixes": ["codex"]
-    },
-    {
-      "id": "omalaunch.pi",
-      "name": "Pi for Omalaunch",
-      "description": "Launch Pi prompts from Omalaunch",
-      "author": "Daniel Lemky",
-      "repository": "https://github.com/DanielLemky/omalaunch-pi",
-      "prefixes": ["pi"]
-    }
-  ]
+  "schemaVersion": 1,
+  "extensions": []
 }

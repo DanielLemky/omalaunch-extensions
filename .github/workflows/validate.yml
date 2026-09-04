@@ -3,6 +3,8 @@ name: Validate directory
 on:
   push:
   pull_request:
+  schedule:
+    - cron: "17 9 * * 1"
 
 permissions:
   contents: read
@@ -18,9 +20,9 @@ jobs:
       - name: Install website dependencies
         run: npm ci
       - name: Validate catalog
-        run: npx --yes ajv-cli@5 validate --spec=draft2020 -s schema.json -d extensions.json
-      - name: Check ordering and uniqueness
-        run: node scripts/check-directory.js
+        run: npm run check
+      - name: Validate listed repositories
+        run: npm run check:repositories
       - name: Check generated extension pages
         run: |
           node scripts/generate-pages.js

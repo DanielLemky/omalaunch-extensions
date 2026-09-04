@@ -74,8 +74,11 @@ async function main() {
     const marketplaceLink = extension.omarchyPluginsUrl
       ? `<a class="detail-link" href="${escapeHtml(extension.omarchyPluginsUrl)}">View on Omarchy Plugins <span aria-hidden="true">↗</span></a>`
       : '';
-    const prefixes = extension.prefixes
+    const prefixes = (extension.prefixes || [])
       .map((prefix) => `<code class="prefix">${escapeHtml(prefix)}</code>`)
+      .join('');
+    const modes = extension.modes
+      .map((mode) => `<code class="prefix">${escapeHtml(mode)}</code>`)
       .join('');
     const readme = await renderReadme(extension);
 
@@ -103,7 +106,8 @@ async function main() {
 
       <dl class="detail-meta">
         <div><dt>Author</dt><dd>${author}</dd></div>
-        <div><dt>Prefix${extension.prefixes.length === 1 ? '' : 'es'}</dt><dd class="prefixes">${prefixes}</dd></div>
+        <div><dt>Mode${extension.modes.length === 1 ? '' : 's'}</dt><dd class="prefixes">${modes}</dd></div>
+        ${prefixes ? `<div><dt>Prefix${extension.prefixes.length === 1 ? '' : 'es'}</dt><dd class="prefixes">${prefixes}</dd></div>` : ''}
       </dl>
 
       <div class="detail-actions">

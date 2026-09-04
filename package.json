@@ -3,10 +3,16 @@
   "private": true,
   "scripts": {
     "build": "node scripts/generate-pages.js",
-    "check": "node scripts/check-directory.js"
+    "check": "npm run validate && npm run check:catalog",
+    "validate": "ajv validate --spec=draft2020 -s schema.json -d extensions.json",
+    "check:catalog": "node scripts/check-directory.js",
+    "check:repositories": "node scripts/check-repositories.js"
   },
   "dependencies": {
     "marked": "15.0.12",
     "sanitize-html": "2.17.7"
+  },
+  "devDependencies": {
+    "ajv-cli": "5.0.0"
   }
 }
