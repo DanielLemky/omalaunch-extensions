@@ -21,8 +21,8 @@ function createCard(extension, index) {
 
   const prefixes = document.createElement('div');
   prefixes.className = 'prefixes';
-  prefixes.setAttribute('aria-label', 'Launcher prefixes');
-  extension.prefixes.forEach((value) => {
+  prefixes.setAttribute('aria-label', 'Extension modes and launcher prefixes');
+  [...extension.modes, ...(extension.prefixes || [])].forEach((value) => {
     const prefix = document.createElement('code');
     prefix.className = 'prefix';
     prefix.textContent = value;
@@ -53,5 +53,5 @@ fetch('./extensions.json')
     grid.replaceChildren(...extensions.map(createCard));
   })
   .catch(() => {
-    grid.innerHTML = '<p class="notice">The directory could not be loaded. <a href="extensions.json">View the catalog on GitHub</a>.</p>';
+    grid.innerHTML = '<p class="notice">The directory could not be loaded. <a href="extensions.json">View the catalog data</a>.</p>';
   });

@@ -6,21 +6,17 @@ This repository is only a catalog—it is not an Omarchy plugin and should not b
 
 ## Browse extensions
 
-Visit the [Omalaunch Extension Directory](https://daniellemky.github.io/omalaunch-extensions/) or browse the catalog below.
-
-- [Claude Code for Omalaunch](https://github.com/DanielLemky/omalaunch-claude)
-- [Codex for Omalaunch](https://github.com/DanielLemky/omalaunch-codex)
-- [Pi for Omalaunch](https://github.com/DanielLemky/omalaunch-pi)
-
-See [`extensions.json`](extensions.json) for the machine-readable directory.
+Visit the [Omalaunch Extension Directory](https://daniellemky.github.io/omalaunch-extensions/) or see [`extensions.json`](extensions.json) for the machine-readable directory. Community extensions will appear after they pass review.
 
 When an extension is listed on [omarchyplugins.com](https://omarchyplugins.com), its directory entry links to the marketplace page. The extension's GitHub repository remains the canonical source.
 
 ## Submit an extension
 
-[Open the extension submission form](https://github.com/DanielLemky/omalaunch-extensions/issues/new?template=submit-extension.yml) with the public GitHub repository and its prefixes. No pull request or catalog editing is required.
+[Open the extension submission form](https://github.com/DanielLemky/omalaunch-extensions/issues/new?template=submit-extension.yml) with the public GitHub repository and its extension metadata. No pull request or catalog editing is required.
 
-Submissions follow the same baseline rules as omarchyplugins.com: a public repository, valid namespaced Omarchy manifest, README, license, and documented safe installation and removal. An omarchyplugins.com listing is optional and can be linked when available.
+Submission is optional. Authors retain ownership and choose their license. Directory inclusion is not required to use or distribute an extension.
+
+Submissions follow the same baseline rules as omarchyplugins.com: a public repository, valid namespaced Omarchy manifest, README, license, and documented safe installation and removal. An omarchyplugins.com listing is optional and can be linked when available. Launcher prefixes are optional because query-only and other extensions do not always use them.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for the complete acceptance requirements.
 

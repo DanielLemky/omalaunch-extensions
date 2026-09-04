@@ -1,5 +1,5 @@
 name: Submit an extension
-description: Submit a public Omalaunch extension for inclusion in the directory
+description: Submit a public Omalaunch extension for optional inclusion in the directory
 title: "[Extension]: "
 labels:
   - submission
@@ -7,7 +7,18 @@ body:
   - type: markdown
     attributes:
       value: |
-        Submit the GitHub repository for your Omalaunch extension. The directory validates listings, not extension security. Extensions run unsandboxed with the user's permissions.
+        Submit the GitHub repository for your Omalaunch extension. Submission is optional. Authors retain ownership and choose their license. Directory inclusion is not required to use or distribute an extension.
+
+        The directory validates listings, not extension security. Extensions run unsandboxed with the user's permissions.
+
+  - type: input
+    id: plugin-id
+    attributes:
+      label: Plugin ID
+      description: Exact namespaced ID from manifest.json.
+      placeholder: yourname.example
+    validations:
+      required: true
 
   - type: input
     id: repository
@@ -18,6 +29,45 @@ body:
     validations:
       required: true
 
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: A short description for the directory listing.
+    validations:
+      required: true
+
+  - type: input
+    id: capabilities
+    attributes:
+      label: Capabilities
+      description: Comma-separated capability IDs supplied by the plugin.
+      placeholder: example-search, example-actions
+    validations:
+      required: true
+
+  - type: dropdown
+    id: modes
+    attributes:
+      label: Extension modes
+      description: Select every mode supplied by the plugin.
+      multiple: true
+      options:
+        - Prefix
+        - Live query
+        - Files
+        - Workflow
+        - Dynamic menu
+    validations:
+      required: true
+
+  - type: input
+    id: prefixes
+    attributes:
+      label: Prefixes
+      description: Optional comma-separated launcher prefixes exposed by the extension.
+      placeholder: example, ex
+
   - type: input
     id: marketplace
     attributes:
@@ -25,32 +75,25 @@ body:
       description: Optional link if the extension is already listed on omarchyplugins.com.
       placeholder: https://omarchyplugins.com/plugins/your-extension
 
-  - type: input
-    id: prefixes
-    attributes:
-      label: Prefixes
-      description: Comma-separated launcher prefixes exposed by the extension, if any.
-      placeholder: example, ex
-    validations:
-      required: true
-
   - type: checkboxes
     id: requirements
     attributes:
       label: Submission requirements
-      description: Confirm that the repository follows the same baseline rules used by omarchyplugins.com.
+      description: Confirm that the repository follows the directory baseline.
       options:
         - label: The repository is public on GitHub.
           required: true
         - label: A valid `manifest.json` exists in the repository root and uses a unique namespaced plugin ID.
           required: true
-        - label: The manifest declares one or more files through `omalaunch.extensions`.
+        - label: The manifest declares one or more files or providers through `omalaunch.extensions` or `omalaunch.extensionProviders`.
           required: true
         - label: The repository includes a README and license.
           required: true
         - label: Installation and removal instructions are documented and safe.
           required: true
         - label: Dependencies and privilege boundaries are documented, and no dependencies are installed silently.
+          required: true
+        - label: Commands use argument arrays and pass user-controlled values as complete arguments instead of constructing shell command strings.
           required: true
         - label: I tested the extension on a current Omarchy installation.
           required: true
