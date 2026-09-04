@@ -1,5 +1,22 @@
 {
   "$schema": "./schema.json",
   "schemaVersion": 1,
-  "extensions": []
+  "extensions": [
+    {
+      "id": "quantumfire.weather",
+      "name": "Weather",
+      "description": "View the current Omarchy weather status, open the detailed forecast, and manage the weather location from Omalaunch.",
+      "author": "quantumfire",
+      "repository": "https://github.com/DanielLemky/quantumfire.weather",
+      "capabilities": [
+        "quantumfire.weather"
+      ],
+      "modes": [
+        "menu"
+      ],
+      "prefixes": [
+        "weather"
+      ]
+    }
+  ]
 }
