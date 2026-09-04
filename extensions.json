@@ -3,6 +3,22 @@
   "schemaVersion": 1,
   "extensions": [
     {
+      "id": "quantumfire.omarchy-news",
+      "name": "Omarchy News",
+      "description": "Read the latest official Omarchy news in Omalaunch.",
+      "author": "Daniel Lemky",
+      "repository": "https://github.com/DanielLemky/quantumfire.omarchy-news",
+      "capabilities": [
+        "quantumfire.omarchy-news"
+      ],
+      "modes": [
+        "menu"
+      ],
+      "prefixes": [
+        "omarchy-news"
+      ]
+    },
+    {
       "id": "quantumfire.weather",
       "name": "Weather",
       "description": "View the current Omarchy weather status, open the detailed forecast, and manage the weather location from Omalaunch.",
