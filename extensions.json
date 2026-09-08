@@ -3,6 +3,22 @@
   "schemaVersion": 1,
   "extensions": [
     {
+      "id": "ozz1ee.clipboard",
+      "name": "Clipboard",
+      "description": "Browse clipboard history, copy text and image paths, and type selected text into the focused window from Omalaunch.",
+      "author": "ozz1ee",
+      "repository": "https://github.com/radiohost-cloud/ozz1ee.clipboard",
+      "capabilities": [
+        "ozz1ee.clipboard"
+      ],
+      "modes": [
+        "menu"
+      ],
+      "prefixes": [
+        "clipboard"
+      ]
+    },
+    {
       "id": "quantumfire.omarchy-news",
       "name": "Omarchy News",
       "description": "Read the latest official Omarchy news in Omalaunch.",
