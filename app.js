@@ -9,8 +9,21 @@ function createCard(extension, index) {
   number.className = 'card-index';
   number.textContent = String(index + 1).padStart(2, '0');
 
+  const heading = document.createElement('div');
+  heading.className = 'card-heading';
+
   const title = document.createElement('h3');
   title.textContent = extension.name;
+  heading.append(title);
+
+  if (extension.verified === true) {
+    const verified = document.createElement('span');
+    verified.className = 'verified-badge';
+    verified.title = 'Locally tried and verified by a directory maintainer';
+    verified.setAttribute('aria-label', verified.title);
+    verified.textContent = '✓ Verified';
+    heading.append(verified);
+  }
 
   const description = document.createElement('p');
   description.className = 'description';
@@ -39,7 +52,7 @@ function createCard(extension, index) {
   }));
 
   meta.append(prefixes, link);
-  card.append(number, title, description, meta);
+  card.append(number, heading, description, meta);
   return card;
 }
 
