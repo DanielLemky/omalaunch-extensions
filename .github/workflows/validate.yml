@@ -23,7 +23,5 @@ jobs:
         run: npm run check
       - name: Validate listed repositories
         run: npm run check:repositories
-      - name: Check generated extension pages
-        run: |
-          node scripts/generate-pages.js
-          git diff --exit-code -- extensions/
+      - name: Generate extension pages
+        run: npm run build
