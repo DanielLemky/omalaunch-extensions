@@ -62,8 +62,11 @@ fetch('./extensions.json')
     return response.json();
   })
   .then(({ extensions }) => {
+    const newestFirst = [...extensions].sort((left, right) =>
+      right.addedAt.localeCompare(left.addedAt) || left.id.localeCompare(right.id)
+    );
     count.textContent = `${extensions.length} ${extensions.length === 1 ? 'extension' : 'extensions'}`;
-    grid.replaceChildren(...extensions.map(createCard));
+    grid.replaceChildren(...newestFirst.map(createCard));
   })
   .catch(() => {
     grid.innerHTML = '<p class="notice">The directory could not be loaded. <a href="extensions.json">View the catalog data</a>.</p>';
