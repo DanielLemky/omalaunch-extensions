@@ -71,6 +71,9 @@ async function main() {
     const description = escapeHtml(extension.description);
     const author = escapeHtml(extension.author);
     const repository = escapeHtml(extension.repository);
+    const verifiedBadge = extension.verified === true
+      ? '<span class="verified-badge" title="Locally tried and verified by a directory maintainer" aria-label="Locally tried and verified by a directory maintainer">✓ Verified</span>'
+      : '';
     const marketplaceLink = extension.omarchyPluginsUrl
       ? `<a class="detail-link" href="${escapeHtml(extension.omarchyPluginsUrl)}">View on Omarchy Plugins <span aria-hidden="true">↗</span></a>`
       : '';
@@ -100,7 +103,10 @@ async function main() {
 
     <article class="extension-detail">
       <img class="detail-icon" src="../../assets/omalaunch-icon.png" alt="" width="72" height="72">
-      <p class="detail-kicker">Omalaunch extension</p>
+      <div class="detail-heading">
+        <p class="detail-kicker">Omalaunch extension</p>
+        ${verifiedBadge}
+      </div>
       <h1>${name}</h1>
       <p class="detail-description">${description}</p>
 

@@ -24,6 +24,7 @@
       "description": "Read the latest official Omarchy news in Omalaunch.",
       "author": "Daniel Lemky",
       "repository": "https://github.com/DanielLemky/quantumfire.omarchy-news",
+      "verified": true,
       "capabilities": [
         "quantumfire.omarchy-news"
       ],
@@ -40,6 +41,7 @@
       "description": "View the current Omarchy weather status, open the detailed forecast, and manage the weather location from Omalaunch.",
       "author": "quantumfire",
       "repository": "https://github.com/DanielLemky/quantumfire.weather",
+      "verified": true,
       "capabilities": [
         "quantumfire.weather"
       ],

@@ -41,6 +41,10 @@
           "maxLength": 512,
           "pattern": "^https://omarchyplugins\\.com/[A-Za-z0-9_./-]+/?$"
         },
+        "verified": {
+          "type": "boolean",
+          "description": "The extension was locally tried and verified by a directory maintainer."
+        },
         "capabilities": {
           "type": "array",
           "minItems": 1,

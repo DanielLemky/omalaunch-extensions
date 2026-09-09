@@ -27,6 +27,8 @@ Provide the exact plugin ID, public repository URL, description, capabilities, m
 
 Maintainers validate the repository's current default-branch commit before adding it to `extensions.json`. Accepted entries must match `schema.json` and remain sorted by plugin ID. Automated checks compare catalog metadata with static extension definitions. Dynamic extension providers require manual review because directory automation does not execute plugin code.
 
+A maintainer can set `verified` to `true` after the maintainer installs and tries the extension locally on a current Omarchy installation. Only maintainers can assign this status. The directory shows a **Verified** badge for these entries. The badge records a successful local check at one point in time. It is not a security audit or a guarantee of future behavior.
+
 Directory inclusion is a discovery aid, not a security endorsement. Maintainers may reject extensions that are misleading, unsafe, abandoned, duplicative, or unrelated to Omalaunch.
 
 ## Listing maintenance
