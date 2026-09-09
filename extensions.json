@@ -24,6 +24,7 @@
       "description": "Browse GitHub repositories, work, and notifications in Omalaunch.",
       "author": "Daniel Lemky",
       "repository": "https://github.com/DanielLemky/omalaunch-github",
+      "verified": true,
       "capabilities": [
         "github"
       ],
