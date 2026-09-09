@@ -19,6 +19,23 @@
       ]
     },
     {
+      "id": "quantumfire.omalaunch-github",
+      "name": "Omalaunch: GitHub",
+      "description": "Browse GitHub repositories, work, and notifications in Omalaunch.",
+      "author": "Daniel Lemky",
+      "repository": "https://github.com/DanielLemky/omalaunch-github",
+      "verified": true,
+      "capabilities": [
+        "github"
+      ],
+      "modes": [
+        "menu"
+      ],
+      "prefixes": [
+        "github"
+      ]
+    },
+    {
       "id": "quantumfire.omarchy-news",
       "name": "Omarchy News",
       "description": "Read the latest official Omarchy news in Omalaunch.",
