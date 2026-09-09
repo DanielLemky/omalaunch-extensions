@@ -24,7 +24,7 @@
     },
     "extension": {
       "type": "object",
-      "required": ["id", "name", "description", "author", "repository", "capabilities", "modes"],
+      "required": ["id", "name", "description", "author", "repository", "addedAt", "capabilities", "modes"],
       "additionalProperties": false,
       "properties": {
         "id": { "$ref": "#/$defs/identifier" },
@@ -35,6 +35,11 @@
           "type": "string",
           "maxLength": 512,
           "pattern": "^https://github\\.com/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+/?$"
+        },
+        "addedAt": {
+          "type": "string",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+          "description": "The date when the extension was added to the directory."
         },
         "omarchyPluginsUrl": {
           "type": "string",

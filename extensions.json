@@ -8,6 +8,7 @@
       "description": "Browse clipboard history, copy text and image paths, and type selected text into the focused window from Omalaunch.",
       "author": "ozz1ee",
       "repository": "https://github.com/radiohost-cloud/ozz1ee.clipboard",
+      "addedAt": "2026-09-08",
       "capabilities": [
         "ozz1ee.clipboard"
       ],
@@ -20,10 +21,11 @@
     },
     {
       "id": "quantumfire.omalaunch-github",
-      "name": "Omalaunch: GitHub",
+      "name": "GitHub",
       "description": "Browse GitHub repositories, work, and notifications in Omalaunch.",
       "author": "Daniel Lemky",
       "repository": "https://github.com/DanielLemky/omalaunch-github",
+      "addedAt": "2026-09-09",
       "verified": true,
       "capabilities": [
         "github"
@@ -41,6 +43,7 @@
       "description": "Read the latest official Omarchy news in Omalaunch.",
       "author": "Daniel Lemky",
       "repository": "https://github.com/DanielLemky/quantumfire.omarchy-news",
+      "addedAt": "2026-09-04",
       "verified": true,
       "capabilities": [
         "quantumfire.omarchy-news"
@@ -58,6 +61,7 @@
       "description": "View the current Omarchy weather status, open the detailed forecast, and manage the weather location from Omalaunch.",
       "author": "quantumfire",
       "repository": "https://github.com/DanielLemky/quantumfire.weather",
+      "addedAt": "2026-09-03",
       "verified": true,
       "capabilities": [
         "quantumfire.weather"
