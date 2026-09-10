@@ -73,6 +73,24 @@
       ]
     },
     {
+      "id": "quantumfire.tailscale",
+      "name": "Tailscale",
+      "description": "Manage Tailscale connections, accounts, machines, exit nodes, and Taildrop file transfers from Omalaunch.",
+      "author": "Daniel Lemky",
+      "repository": "https://github.com/DanielLemky/omalaunch-tailscale",
+      "addedAt": "2026-09-10",
+      "verified": true,
+      "capabilities": [
+        "tailscale"
+      ],
+      "modes": [
+        "menu"
+      ],
+      "prefixes": [
+        "tailscale"
+      ]
+    },
+    {
       "id": "quantumfire.weather",
       "name": "Weather",
       "description": "View the current Omarchy weather status, open the detailed forecast, and manage the weather location from Omalaunch.",
