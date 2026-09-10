@@ -20,6 +20,23 @@
       ]
     },
     {
+      "id": "ozz1ee.keyboard-cleaner",
+      "name": "Keyboard Cleaner",
+      "description": "Temporarily block keyboard and pointer input for cleaning, with a choice of 15, 30, or 60 seconds.",
+      "author": "ozz1ee",
+      "repository": "https://github.com/radiohost-cloud/ozz1ee.keyboard-cleaner",
+      "addedAt": "2026-09-09",
+      "capabilities": [
+        "ozz1ee.keyboard-cleaner"
+      ],
+      "modes": [
+        "workflow"
+      ],
+      "prefixes": [
+        "keyboard-cleaner"
+      ]
+    },
+    {
       "id": "quantumfire.omalaunch-github",
       "name": "GitHub",
       "description": "Browse GitHub repositories, work, and notifications in Omalaunch.",
