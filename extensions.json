@@ -37,6 +37,26 @@
       ]
     },
     {
+      "id": "quantumfire.google-calendar",
+      "name": "Google Calendar",
+      "description": "View today’s agenda, upcoming meetings, and Google Meet actions through Google Workspace CLI.",
+      "author": "Daniel Lemky",
+      "repository": "https://github.com/DanielLemky/quantumfire.google-calendar",
+      "addedAt": "2026-09-11",
+      "verified": true,
+      "capabilities": [
+        "quantumfire.google-calendar"
+      ],
+      "modes": [
+        "menu"
+      ],
+      "prefixes": [
+        "google-calendar",
+        "calendar",
+        "agenda"
+      ]
+    },
+    {
       "id": "quantumfire.omalaunch-github",
       "name": "GitHub",
       "description": "Browse GitHub repositories, work, and notifications in Omalaunch.",
