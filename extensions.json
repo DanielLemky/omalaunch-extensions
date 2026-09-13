@@ -7,7 +7,7 @@
       "name": "Clipboard",
       "description": "Browse clipboard history, copy text and image paths, and type selected text into the focused window from Omalaunch.",
       "author": "ozz1ee",
-      "repository": "https://github.com/radiohost-cloud/ozz1ee.clipboard",
+      "repository": "https://github.com/ozz1ee-dev/ozz1ee.clipboard",
       "addedAt": "2026-09-08",
       "capabilities": [
         "ozz1ee.clipboard"
@@ -24,7 +24,7 @@
       "name": "Keyboard Cleaner",
       "description": "Temporarily block keyboard and pointer input for cleaning, with a choice of 15, 30, or 60 seconds.",
       "author": "ozz1ee",
-      "repository": "https://github.com/radiohost-cloud/ozz1ee.keyboard-cleaner",
+      "repository": "https://github.com/ozz1ee-dev/ozz1ee.keyboard-cleaner",
       "addedAt": "2026-09-09",
       "capabilities": [
         "ozz1ee.keyboard-cleaner"
